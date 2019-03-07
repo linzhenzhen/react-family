@@ -1,0 +1,15 @@
+.container {
+  padding: 1rem;
+  background: blue;
+}
+
+.page-box {
+  padding: 5px;
+  border: 1rem solid rgba(0, 0, 0, .1);
+  background-color: white;
+  background-clip: padding-box;
+}
+
+img {
+  width: 100%;
+}
