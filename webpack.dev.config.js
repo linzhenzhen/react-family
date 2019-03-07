@@ -1,5 +1,9 @@
-// 开发期间 webpack 的配置文件
+/**
+ * 开发期间 webpack 的配置文件
+ */
 const path = require('path');
+// 这个插件每次会把 JS 插入到你的模版 index.html 中
+var HtmlWebpackPlugin = require('html-webpack-plugin'); 
 
 module.exports = {
   /* 入口 */
@@ -18,7 +22,7 @@ module.exports = {
     chunkFilename: '[name].[chunkhash].js',
   },
 
-  // 目录别名
+  /* 目录别名 */
   resolve: {
     alias: {
       pages: path.join(__dirname, 'src/pages'),
@@ -54,6 +58,14 @@ module.exports = {
     ]
   },
 
+  /* 插件 */
+  plugins: [
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: path.join(__dirname, './src/index.html')
+    })
+  ],
+
   /* 创建小型静态文件服务器，可以为 webpack 打包生成的资源文件提供 web 服务 */
   devServer: {
     port: 8080,
@@ -66,7 +78,6 @@ module.exports = {
     // }
   },
 
-  // 详细的控制台错误信息配置
+  /* 详细的控制台错误信息配置 */
   devtool: 'inline-source-map'
-
 }
