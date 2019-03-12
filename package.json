@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.config.js --color --hot",
+    "build": "webpack --config webpack.config.js",
     "dev-build": "webpack --config webpack.dev.config.js --color",
     "serve": "http-server -p 9090 dist/"
   },

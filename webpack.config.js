@@ -1,5 +1,5 @@
 /**
- * Development webpack 的配置文件
+ * Production webpack 的配置文件
  */
 const path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin'); // 这个插件每次会把 JS 插入到你的模版 index.html 中
@@ -9,8 +9,7 @@ module.exports = {
   /* 入口 */
   entry: {
     app: [
-      'react-hot-loader/patch',
-       path.join(__dirname, 'src/index.js')
+      path.join(__dirname, 'src/index.js')
     ],
     // 把react中不会改变的核心库文件打包成一个 vendor.hash.js 并缓存起来
     vendor: [
@@ -28,19 +27,8 @@ module.exports = {
     path: path.join(__dirname, './dist'),
     // filename: 'bundle.js',
     // chunkFilename: '[name].js',
-    filename: '[name].[hash].js', // 这里应该用 chunkhash 替换成 hash
+    filename: '[name].[chunkhash].js', // 这里应该用 chunkhash 替换成 hash
     chunkFilename: '[name].[chunkhash].js',
-  },
-
-  /* 目录别名 */
-  resolve: {
-    alias: {
-      pages: path.join(__dirname, 'src/pages'),
-      components: path.join(__dirname, 'src/components'),
-      router: path.join(__dirname, 'src/router'),
-      actions: path.join(__dirname, 'src/redux/actions'),
-      reducers: path.join(__dirname, 'src/redux/reducers'),
-    }
   },
 
   /* src 文件夹下面的以 .js 结尾的文件，要使用 babel 解析 */
@@ -49,7 +37,7 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        use: ['babel-loader?cacheDirectory=true'],
+        use: ['babel-loader'],
         include: path.join(__dirname, 'src')
       },
       {
@@ -79,18 +67,17 @@ module.exports = {
     })
   ],
 
-  /* 创建小型静态文件服务器，可以为 webpack 打包生成的资源文件提供 web 服务 */
-  devServer: {
-    port: 8080,
-    contentBase: path.join(__dirname, './dist'),
-    historyApiFallback: true,
-    host: '0.0.0.0',
-    /* 后端服务代理 */
-    // proxy: {
-    //   "/api": "http://localhost:3000"
-    // }
+  /* 目录别名 */
+  resolve: {
+    alias: {
+      pages: path.join(__dirname, 'src/pages'),
+      components: path.join(__dirname, 'src/components'),
+      router: path.join(__dirname, 'src/router'),
+      actions: path.join(__dirname, 'src/redux/actions'),
+      reducers: path.join(__dirname, 'src/redux/reducers'),
+    }
   },
 
   /* 详细的控制台错误信息配置 */
-  devtool: 'inline-source-map'
+  devtool: 'cheap-module-source-map'
 }
