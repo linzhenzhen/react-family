@@ -42,4 +42,6 @@ npm start
 
 ![压缩后 04.jpg](./imgs/04.jpg)
 
+4. 增加指定 `process.env.NODE_ENV === 'production'` 环境时，vendor 文件变小了，我练习时还没能领会怎么变小的，先贴图记录。
 
+![压缩后 05.jpg](./imgs/05.jpg)

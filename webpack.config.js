@@ -59,17 +59,22 @@ module.exports = {
 
   /* 插件 */
   plugins: [
-    new UglifyJSPlugin({
-      uglifyOptions: {
-        drop_console: true
-      }
-    }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.join(__dirname, './src/index.html')
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor'
+    }),
+    new UglifyJSPlugin({
+      uglifyOptions: {
+        drop_console: true
+      }
+    }),
+    new webpack.DefinePlugin({ // webpack 内置的 DefinePlugin 为所有的依赖定义这个环境变量
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
     })
   ],
 
