@@ -20,9 +20,20 @@ npm start
 
 1. Uncaught Invariant Violation: Target container is not a DOM element.
 
-![error01.jpg](./error-imgs/01.jpeg)
+![error01.jpg](./imgs/01.jpeg)
 
 `已解决` 在 src/index.html 内容处插入一个 js 引入，然后刷新或者从新编译刷新页面就可以了，很神奇的修复了这个问题。[详见参考链接 @Mandy94](https://github.com/storybooks/storybook/issues/2615#issuecomment-405088812)
 
+2. TypeError: Cannot read property 'compilation' of undefined.
+
+![error03.jpg](./imgs/03.jpg)
+
+`已解决` 这个是在练习文件压缩使用 webpack 的 uglifyjs-webpack-plugin 时 build 报错的。解决办法是重新安装 `uglifyjs-webpack-plugin@1`。[详见参考链接 @evilebottnawi](https://github.com/webpack-contrib/uglifyjs-webpack-plugin/issues/360#issuecomment-423567387)
+
+3. 对比使用 `uglifyjs-webpack-plugin` 压缩前后的文件大小图
+
+![压缩前 02.jpg](./imgs/02.jpg)
+
+![压缩后 04.jpg](./imgs/04.jpg)
 
 

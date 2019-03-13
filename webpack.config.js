@@ -4,6 +4,7 @@
 const path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin'); // 这个插件每次会把 JS 插入到你的模版 index.html 中
 var webpack = require('webpack');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin'); // 文件压缩
 
 module.exports = {
   /* 入口 */
@@ -58,6 +59,11 @@ module.exports = {
 
   /* 插件 */
   plugins: [
+    new UglifyJSPlugin({
+      uglifyOptions: {
+        drop_console: true
+      }
+    }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.join(__dirname, './src/index.html')
