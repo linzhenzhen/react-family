@@ -75,6 +75,9 @@ module.exports = {
       'process.env': {
         'NODE_ENV': JSON.stringify('production')
       }
+    }),
+    new webpack.HashedModuleIdsPlugin({ // 让vendor不进行生成新的 hashID，即不进行新打包vendor文件
+      name: 'runtime'
     })
   ],
 
