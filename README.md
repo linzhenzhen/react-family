@@ -45,3 +45,11 @@ npm start
 4. 增加指定 `process.env.NODE_ENV === 'production'` 环境时，vendor 文件变小了，我练习时还没能领会怎么变小的，先贴图记录。
 
 ![压缩后 05.jpg](./imgs/05.jpg)
+
+5. Error: clean-webpack-plugin only accepts an options object.
+
+![error06.jpg](./imgs/06.jpg)
+
+`已解决` 这个问题是因为加了 "new CleanWebpackPlugin(['dist'])" 后报错的，看报错的意思是括号里面应该是个 Object，所以传的是错的 Options。如果没什么要求，解决方式就是不传任何内容，即直接注入 "new CleanWebpackPlugin()"就行了。经过删除 dist 的文件，之前的 api/user.json 也不在了，所以要用的话，需要在重新新建一下。 [详见 CleanWebpackPlugin 的参数](https://github.com/johnagan/clean-webpack-plugin#options-and-defaults-optional)
+
+6. 

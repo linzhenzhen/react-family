@@ -5,6 +5,7 @@ const path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin'); // 这个插件每次会把 JS 插入到你的模版 index.html 中
 var webpack = require('webpack');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin'); // 文件压缩
+const CleanWebpackPlugin = require('clean-webpack-plugin'); // 每次打包时候 clean dist
 
 module.exports = {
   /* 入口 */
@@ -60,6 +61,7 @@ module.exports = {
 
   /* 插件 */
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.join(__dirname, './src/index.html')

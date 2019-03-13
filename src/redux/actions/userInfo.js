@@ -27,6 +27,7 @@ export function getUserInfo() {
   return function(dispatch) {
     dispatch(getUserInfoRequest());
 
+    // 这里 user.json 的文件被 CleanWebpackPlugin 清理 dist 重新生成 dist 后删除了，为了测试，可以手动在新建一下
     return fetch('http://localhost:8080/api/user.json')
     .then(response => {
       return response.json()
