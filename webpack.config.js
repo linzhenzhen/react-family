@@ -26,6 +26,7 @@ module.exports = {
   /* 增加 chunkFilename 按需加载分别打包，名称在 router bundle-loader 内有配置 */
   output: {
     path: path.join(__dirname, './dist'),
+    publicPath: '/', // 已备静态文件链接定位的服务器路径
     // filename: 'bundle.js',
     // chunkFilename: '[name].js',
     filename: '[name].[chunkhash].js', // 这里应该用 chunkhash 替换成 hash
@@ -76,7 +77,8 @@ module.exports = {
         'NODE_ENV': JSON.stringify('production')
       }
     }),
-    new webpack.HashedModuleIdsPlugin({ // 让vendor不进行生成新的 hashID，即不进行新打包vendor文件
+    // 注：CommonsChunkPlugin 的 'vendor' 实例，必须在 'runtime' 实例之前引入
+    new webpack.HashedModuleIdsPlugin({ // 让 vendor 不随着页面 build 而重新 build 从而进行缓存
       name: 'runtime'
     })
   ],
