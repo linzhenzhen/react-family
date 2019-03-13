@@ -1,6 +1,8 @@
 # React-Family
 从零初步搭建及学习 React. start at 2019-03-04 Mon.
 
+根据第一篇参考地址作为实践练习，但因每个人电脑环境和开发工具不同，在练习过程中遇到很多报错的现象，所以来这里做个记录，已备日后查看。
+
 ### 参考地址
 1. [从零搭建 React 全家桶框架教程](https://github.com/brickspert/blog/issues/1#hot-module-replacement)
 2. [入门教程：认识React](https://zh-hans.reactjs.org/tutorial/tutorial.html)
@@ -28,11 +30,15 @@ npm start
 
 ![error03.jpg](./imgs/03.jpg)
 
-`已解决` 这个是在练习文件压缩使用 webpack 的 uglifyjs-webpack-plugin 时 build 报错的。解决办法是重新安装 `uglifyjs-webpack-plugin@1`。[详见参考链接 @evilebottnawi](https://github.com/webpack-contrib/uglifyjs-webpack-plugin/issues/360#issuecomment-423567387)
+`已解决` 这个是在练习文件压缩使用 webpack 的 uglifyjs-webpack-plugin 时 build 报错的。因为 `webpack@3 requires uglifyjs-webpack-plugin@1`, 所以解决办法是重新安装 `uglifyjs-webpack-plugin@1`。[详见参考链接 @evilebottnawi](https://github.com/webpack-contrib/uglifyjs-webpack-plugin/issues/360#issuecomment-423567387)
 
-3. 对比使用 `uglifyjs-webpack-plugin` 压缩前后的文件大小图
+3. 对比使用 `uglifyjs-webpack-plugin` 压缩前后的文件大小图，其中有些文件还是有明显的缩减的。
+
+压缩前文件大小截图
 
 ![压缩前 02.jpg](./imgs/02.jpg)
+
+压缩后文件大小截图
 
 ![压缩后 04.jpg](./imgs/04.jpg)
 
