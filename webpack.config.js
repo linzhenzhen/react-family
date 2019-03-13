@@ -66,7 +66,9 @@ module.exports = {
 
   /* 插件 */
   plugins: [
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin({
+      cleanOnceBeforeBuildPatterns: ['*.*', '!api/*.*'], // 生成新的 dist 之前，删除根目录的文件，除了api文件包的内容
+    }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.join(__dirname, './src/index.html')
