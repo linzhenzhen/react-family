@@ -8,6 +8,11 @@
   border: 1rem solid rgba(0, 0, 0, .1);
   background-color: white;
   background-clip: padding-box;
+  transition: transform ease-in-out .3s;
+}
+
+.page-box:hover {
+  transform: scale(.8);
 }
 
 img {
