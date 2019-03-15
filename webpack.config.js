@@ -20,6 +20,8 @@ const publicConfig = {
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: ['css-loader', 'postcss-loader']
+          // 使用 modules 这里有个错误未解决 readme@No.6
+          // use: ['css-loader?modules&localIdentName=[local]-[hash:base64:5]', 'postcss-loader']
         })
       }
     ]

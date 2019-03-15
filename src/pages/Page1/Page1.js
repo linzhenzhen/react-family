@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
+// import style from './Page1.css'; readme@No.6
 import './Page1.css';
+
 import bing20190305 from './images/bing20190305.jpg';
 
 export default class Page1 extends Component {

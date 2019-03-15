@@ -28,6 +28,8 @@ const devConfig = {
       {
         test: /\.css$/,
         use: ["style-loader", "css-loader", 'postcss-loader']
+        // // 使用 modules 这里有个错误未解决 readme@No.6
+        // use: ["style-loader", "css-loader?modules&localIdentName=[local]-[hash:base64:5]", 'postcss-loader']
       }
     ]
   },

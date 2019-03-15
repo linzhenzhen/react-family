@@ -11,7 +11,7 @@
 
 按照以下命令依次执行后，访问 `http://localhost:8080`
 
-```
+```js
 git clone git@github.com:linzhenzhen/react-family.git
 cd react-family/
 npm install
@@ -60,4 +60,13 @@ new CleanWebpackPlugin({
 })
 ```
 
-6. 
+6. Module build failed: TypeError: Path must be a string. Received undefined
+
+![error07.jpg](./imgs/07.jpg)
+
+`未解决`，这里是在练习“使用 CSS Modules” 时候报的错误。是因为加了以下配置。我先屏蔽了这里代码。
+
+```js
+use: ["style-loader", "css-loader?modules&localIdentName=[local]-[hash:base64:5]", 'postcss-loader']
+```
+
