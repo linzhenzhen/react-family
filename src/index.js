@@ -72,6 +72,11 @@ import store from './redux/store';
 
 import getRouter from 'router/router';
 
+// 只在开发环境在采用 mock
+if (MOCK) {
+   require('mock/mock');
+}
+
 /* 初始化 */
 renderWithHotReload(getRouter());
 

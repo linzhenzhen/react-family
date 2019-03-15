@@ -3,6 +3,7 @@
  */
 const merge = require('webpack-merge');
 const path  = require('path');
+const webpack = require('webpack');
 const commonConfig = require('./webpack.common.config');
 
 const devConfig = {
@@ -30,6 +31,12 @@ const devConfig = {
       }
     ]
   },
+
+  plugins: [
+    new webpack.DefinePlugin({
+      MOCK: true
+    })
+  ],
 
   devServer: {
     contentBase: path.join(__dirname, './dist'),
