@@ -18,6 +18,17 @@ npm install
 npm start
 ```
 
+### 其他启动命令说明
+
+```js
+npm start      // 启动项目
+npm build      // 生产环境打包项目，生成打包后的文件都在 ./dist 内
+npm run dev-build  // 开发环境打包
+npm run mock       // json-server 拦截并监听 api，模拟数据的命令，配合 ‘mockdev’ 使用
+npm run mockdev    // json-server 模拟接口请求，同时执行 'npm mock' 和 ‘npm start’
+npm run serve      // http-server 本地服务，在没有搭建 webpack 本地服务之前，可暂时使用 http-server 来快速搭建
+```
+
 ### 以下是练习中遇到的问题
 
 1. Uncaught Invariant Violation: Target container is not a DOM element.
@@ -70,3 +81,37 @@ new CleanWebpackPlugin({
 use: ["style-loader", "css-loader?modules&localIdentName=[local]-[hash:base64:5]", 'postcss-loader']
 ```
 
+7. 使用 Mock.js 模拟请求
+
+7.1需开启以下配置
+
+```js
+// webpack.dev.config.js
+new webpack.DefinePlugin({
+  MOCK: true
+})
+```
+
+7.2并引入 mock.js 在src/index.js
+
+```js
+// src/index.js
+if (MOCK) {
+   require('mock/mock');
+}
+```
+7.3打开注释掉的 mock.js
+
+```js
+// mock/mockjs
+import Mock from 'mockjs';
+
+let Random = Mock.Random;
+
+Mock.mock('/api/user', {
+  'name': '@cname',
+  'intro': '@word(20)'
+});
+```
+
+8. 使用 json-server 代替 Mock.js 是注意。windows不支持命令并行执行&，你可以分开执行，或者使用 npm-run-all. 但我是 mac。

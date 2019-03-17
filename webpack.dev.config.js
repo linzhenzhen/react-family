@@ -36,14 +36,17 @@ const devConfig = {
 
   plugins: [
     new webpack.DefinePlugin({
-      MOCK: true
+      MOCK: false
     })
   ],
 
   devServer: {
     contentBase: path.join(__dirname, './dist'),
     historyApiFallback: true,
-    host: '0.0.0.0'
+    host: '0.0.0.0',
+    proxy: {
+      '/api/*': 'http://localhost:8090/$1'
+    }
   }
 }
 
