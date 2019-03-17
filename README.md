@@ -1,11 +1,19 @@
 # React-Family
-从零初步搭建及学习 React. start at 2019-03-04 Mon.
+从零初步搭建学习 React. start at 2019-03-04 Mon.
 
-根据第一篇参考地址作为实践练习，但因每个人电脑环境和开发工具不同，在练习过程中遇到很多报错的现象，所以来这里做个记录，已备日后查看。
+根据第一篇参考地址作为从零搭建 React 框架的实践练习，但因每个人电脑环境和开发工具不同，在练习过程中遇到很多报错的现象，所以来这里做个记录，已备日后查看。另外，React 是基于 JSX 的语言，需要注意 JSX 的语法。
 
 ### 参考地址
 1. [从零搭建 React 全家桶框架教程](https://github.com/brickspert/blog/issues/1#hot-module-replacement)
 2. [入门教程：认识React](https://zh-hans.reactjs.org/tutorial/tutorial.html)
+
+### React 最重要的几个全家桶成员是
+
+react 
+react-dom
+react-router-dom
+redux
+react-redux
 
 ### 启动项目
 
@@ -21,12 +29,12 @@ npm start
 ### 其他启动命令说明
 
 ```js
-npm start      // 启动项目
-npm build      // 生产环境打包项目，生成打包后的文件都在 ./dist 内
+npm start          // 启动项目
+npm build          // 生产环境打包项目，生成打包后的文件都在 ./dist 内
 npm run dev-build  // 开发环境打包
 npm run mock       // json-server 拦截并监听 api，模拟数据的命令，配合 ‘mockdev’ 使用
 npm run mockdev    // json-server 模拟接口请求，同时执行 'npm mock' 和 ‘npm start’
-npm run serve      // http-server 本地服务，在没有搭建 webpack 本地服务之前，可暂时使用 http-server 来快速搭建
+npm run serve      // http-server 本地服务，在没有使用 webpack-dev-server 搭建前，可暂时使用 http-server 来快速搭建
 ```
 
 ### 以下是练习中遇到的问题
@@ -114,4 +122,9 @@ Mock.mock('/api/user', {
 });
 ```
 
-8. 使用 json-server 代替 Mock.js 是注意。windows不支持命令并行执行&，你可以分开执行，或者使用 npm-run-all. 但我是 mac。
+8. 使用 json-server 代替 Mock.js 时注意，windows 不支持命令并行执行 ‘&’，你可以分开执行，或者使用 npm-run-all. 但我是 mac。另外 json-server 与 mock.js 两者区别就是 json-server 功能更强大，支持分页，排序，筛选等等。
+
+9. 实践中有几个没 follow, 因为代码不全，影响实践进度就先略过了, 如下
+
+9.1 优化目录结构并增加404页面
+9.2 Css Modules
