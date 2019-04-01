@@ -131,4 +131,4 @@ Mock.mock('/api/user', {
 
 ---
 
-`learn-redux` 学习理解 redux 2019-04-01. [参考地址](https://github.com/brickspert/blog/issues/22)
+2019-04-01. `learn-redux` 学习理解 redux. [练习参考地址](https://github.com/brickspert/blog/issues/22), 然后回到项目中在读一遍 Redux 就明白了些 [快速直达](https://github.com/brickspert/blog/issues/1#redux)
