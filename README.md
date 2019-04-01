@@ -9,10 +9,10 @@
 
 ### React 最重要的几个全家桶成员是
 
-react 
-react-dom
-react-router-dom
-redux
+react、
+react-dom、
+react-router-dom、
+redux、
 react-redux
 
 ### 启动项目
@@ -128,3 +128,7 @@ Mock.mock('/api/user', {
 
 9.1 优化目录结构并增加404页面
 9.2 Css Modules
+
+---
+
+`learn-redux` 学习理解 redux 2019-04-01. [参考地址](https://github.com/brickspert/blog/issues/22)
