@@ -477,7 +477,7 @@ const applyMiddleware = function(...middlewares) {
 
 // 优化用户体验
 import { createStore } from './redux';
-import { bindActionCreators } from '../../../../../Library/Caches/typescript/3.3/node_modules/redux';
+import { bindActionCreators } from '../../../Library/Caches/typescript/3.3/node_modules/redux';
 const store = createStore(reducer, initState);
 
 const rewriteCreateStoreFunc = applyMiddleware(exceptionMiddleware, timeMiddleware, loggerMiddleware);

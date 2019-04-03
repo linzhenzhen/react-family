@@ -132,3 +132,11 @@ Mock.mock('/api/user', {
 ---
 
 2019-04-01. `learn-redux` 学习理解 redux. [练习参考地址](https://github.com/brickspert/blog/issues/22), 然后回到项目中在读一遍 Redux 就明白了些 [快速直达](https://github.com/brickspert/blog/issues/1#redux)
+
+2019-04-03 实践 React 内高阶组件. [练习参考地址](https://github.com/brickspert/blog/issues/2)。react-redux 的 connect 就用到了高阶函数，把 redux 的 state 和 action 创建函数，通过 props 注入给 Component ，可以在目标组件中用 this.props 去调用。
+
+另，connect 四个参数是, 最常用的是前两个
+
+```
+const enhance = connect(mapStateToProps, mapDispatchToProps, mergeProps, options)(Component);
+```
