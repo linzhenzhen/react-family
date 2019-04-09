@@ -1,19 +1,22 @@
 # React-Family
 从零初步搭建学习 React. start at 2019-03-04 Mon.
 
-根据第一篇参考地址作为从零搭建 React 框架的实践练习，但因每个人电脑环境、开发工具、开发时间不同，在练习过程中遇到很多报错的现象，所以来这里做个记录，已备日后查看。另外，React 是基于 JSX 的语言，需要注意 JSX 的语法。
+根据第一篇参考地址作为从零搭建 React 框架的实践练习，但因每个人电脑环境、开发工具、开发时间不同，在练习过程中遇到很多报错的现象，所以来这里做个记录，已备日后查看。
 
-### 参考地址
+React 的本质是将图形界面（GUI）函数化，是基于 JSX 的语法来写的。
+
+### 参考学习地址
 1. [从零搭建 React 全家桶框架教程](https://github.com/brickspert/blog/issues/1#hot-module-replacement) 感谢@brickspert
-2. [入门教程：认识React](https://zh-hans.reactjs.org/tutorial/tutorial.html)
+2. [React 技术栈-整体预览 Ruan YiFeng](https://github.com/ruanyf/jstraining/blob/master/docs/react.md) 感谢@ruanyf
+3. [入门教程：认识React](https://zh-hans.reactjs.org/tutorial/tutorial.html)
 
 ### React 最重要的几个全家桶成员是
 
-react、
-react-dom、
+react、 // react 核心库
+react-dom、 // react 的 DOM 适配库
 react-router-dom、
-redux、
-react-redux
+redux、// 状态管理
+react-redux // 搭配 redux
 
 ### 启动项目
 
